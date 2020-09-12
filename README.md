@@ -1,4 +1,4 @@
-# g1softwarev2
+# dserec
 
 ## Project setup
 ```

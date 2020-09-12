@@ -1,20 +1,31 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Dashboard from '../views/Dashboard.vue'
-import Edit from '../views/edit.vue'
-
+import Appointments from '../views/Appointments.vue'
+import Make from '../views/Make.vue'
+import Info from 'components/Info.vue'
+import Confirmation from 'components/Confirmation.vue'
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Dashboard
+    name: 'Appointments',
+    component: Appointments
   },
   {
-    path: '/add',
-    name: 'add',
-    component: Edit
+    path: '/make',
+    name: 'Make Appointments',
+    component: Make,
+    children: [
+      {
+        path: "info", 
+        component: Info
+      },
+      {
+        path: "confirmation",
+        component: Confirmation
+      }
+    ]
   }
 ]
 
